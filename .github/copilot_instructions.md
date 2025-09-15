@@ -36,8 +36,10 @@ The GUI must dynamically detect the connected ODrive device version and automati
 * `odrive_api_references/` – documentation folder containing:
   * `API ODrive Reference 0.5.x.txt`
   * `API ODrive Reference 0.6.x.txt`
-* `odrive_api_0.5.json` – structured metadata for ODrive 0.5.x API.
-* `odrive_api_0.6.json` – structured metadata for ODrive 0.6.x API.
+  * `odrive_reference05x.html`
+  * `odrive_reference06x.html`
+* `odriveApiReference05x.json` – structured metadata for ODrive 0.5.x API.
+* `odriveApiReference06x.json` – structured metadata for ODrive 0.6.x API.
 
 Both JSON files act as **bridges** between raw ODrive API references and the application. They provide metadata for commands, methods, properties, categories, and types.
 
