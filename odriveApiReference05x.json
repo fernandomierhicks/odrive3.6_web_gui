@@ -2702,7 +2702,11 @@
       "Ialpha_measured": "Float32Property",
       "Ibeta_measured": "Float32Property",
       "Id_measured": "Float32Property",
-      "Iq_measured": "Float32Property"
+      "Iq_measured": "Float32Property",
+      "v_current_control_integral_d": "Float32Property",
+      "v_current_control_integral_q": "Float32Property",
+      "final_v_alpha": "Float32Property",
+      "final_v_beta": "Float32Property"
     }
   }
 }
