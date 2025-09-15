@@ -1,0 +1,9 @@
+{
+  "version": "0.6.11",
+  "api_metadata": {
+    "root_class": "ODrive",
+    "description": "ODrive motor controller API reference"
+  },
+  "categories": {},
+  "types": {},
+  "enums": {},
