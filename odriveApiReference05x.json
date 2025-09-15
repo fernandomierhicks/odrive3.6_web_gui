@@ -4,52 +4,6 @@
     "root_class": "ODrive",
     "description": "ODrive motor controller API reference"
   },
-  "categories": {
-    "system": {
-      "name": "System",
-      "description": "System-level configuration and control"
-    },
-    "axis": {
-      "name": "Axis",
-      "description": "Axis control and configuration"
-    },
-    "motor": {
-      "name": "Motor",
-      "description": "Motor control and configuration"
-    },
-    "encoder": {
-      "name": "Encoder",
-      "description": "Encoder feedback and configuration"
-    },
-    "controller": {
-      "name": "Controller",
-      "description": "Motion controller configuration"
-    },
-    "can": {
-      "name": "CAN",
-      "description": "CAN communication interface"
-    },
-    "thermistor": {
-      "name": "Thermistor",
-      "description": "Temperature monitoring and protection"
-    },
-    "trajectory": {
-      "name": "Trajectory",
-      "description": "Trajectory planning"
-    },
-    "endstop": {
-      "name": "Endstop",
-      "description": "Endstop configuration"
-    },
-    "brake": {
-      "name": "Brake",
-      "description": "Mechanical brake control"
-    },
-    "oscilloscope": {
-      "name": "Oscilloscope",
-      "description": "Oscilloscope buffer access"
-    }
-  },
   "types": {
     "Float32Property": {
       "base_type": "float",
