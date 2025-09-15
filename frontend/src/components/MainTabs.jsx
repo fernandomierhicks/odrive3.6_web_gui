@@ -14,7 +14,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { useDashboardTelemetry } from '../hooks/useDashboardTelemetry'
 
 // Lazy-loaded tab components
 const ConfigurationTab = lazy(() => import('./tabs/config wizard/ConfigurationTab'))
@@ -89,8 +88,6 @@ const MainTabs = () => {
   const { isConnected, odriveState } = useSelector(state => state.device)
   const [activeTab, setActiveTab] = useState(0)
 
-  // Hook for dashboard telemetry
-  useDashboardTelemetry()
 
   const renderTabContent = (tabConfig, index) => {
     const Component = tabConfig.component

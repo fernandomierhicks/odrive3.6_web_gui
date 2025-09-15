@@ -1,11 +1,9 @@
-import { useSelector } from 'react-redux'
 import {
   Box,
   Flex,
   VStack,
   HStack,
   Heading,
-  Badge,
 } from '@chakra-ui/react'
 
 import DeviceList from './components/DeviceList'
