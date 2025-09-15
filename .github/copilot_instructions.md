@@ -219,4 +219,8 @@ The main interface has five tabs:
 ## Adiitional info for AI agents
 
 * The user uses powershell, not cmd, so check the syntax for powershell when proposing a command to execute
+* 
+## **SUPER IMPORTANT** 
 
+* NEVER ADD FALLBACKS IN THE CODE. THE CODE SHOULD BE PERFECTLY PREDICTABLE.
+* NEVER HARDCODE ANYTHING, ESPECIALLY ODRIVE PATHS!
