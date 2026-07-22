@@ -308,24 +308,60 @@ class ODriveManager:
             logger.warning(f"Error normalizing command '{command}': {e}")
             return command
 
+    def _clear_errors_manual(self) -> Dict[str, Any]:
+        """Manually clear all ODrive error registers (fallback for fw 0.5.6 fibre issue)"""
+        dev = self.current_device
+        cleared = []
+        try:
+            if hasattr(dev, 'error'):
+                dev.error = 0
+                cleared.append('system')
+            for axis_num in range(2):
+                axis_name = f'axis{axis_num}'
+                if not hasattr(dev, axis_name):
+                    continue
+                axis = getattr(dev, axis_name)
+                if hasattr(axis, 'error'):
+                    axis.error = 0
+                    cleared.append(f'{axis_name}')
+                for sub in ['motor', 'encoder', 'controller']:
+                    if hasattr(axis, sub):
+                        subobj = getattr(axis, sub)
+                        if hasattr(subobj, 'error'):
+                            subobj.error = 0
+                            cleared.append(f'{axis_name}.{sub}')
+            return {'result': f'Errors cleared on: {", ".join(cleared)}'}
+        except Exception as e:
+            logger.error(f"Manual clear_errors failed: {e}")
+            return {'error': f'Manual clear_errors failed: {e}'}
+
     def execute_command(self, command: str) -> Dict[str, Any]:
         """Execute a command on the ODrive"""
         if not self.current_device:
             return {'error': 'No device connected'}
-        
+
         try:
             # Normalize the command to use 'device' reference
             normalized_command = self._normalize_command(command)
-            
+
+            # Intercept clear_errors() — fibre's anonymous_interface often lacks this method
+            if 'clear_errors()' in normalized_command:
+                try:
+                    eval(normalized_command, {}, {'device': self.current_device})
+                    return {'result': 'Errors cleared'}
+                except AttributeError:
+                    logger.info("clear_errors() not available on device, using manual fallback")
+                    return self._clear_errors_manual()
+
             # Create a local context with the current device
             local_context = {
                 'device': self.current_device,
                 'True': True,
                 'False': False,
             }
-            
+
             logger.debug(f"Executing command: {command} -> {normalized_command}")
-            
+
             # Check if this is an assignment or function call
             if '=' in normalized_command:
                 # Handle assignments

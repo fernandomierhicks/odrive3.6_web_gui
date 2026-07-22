@@ -1,0 +1,260 @@
+======================================================================
+GUI <-> Board Mismatch Probe (EXHAUSTIVE)
+======================================================================
+
+Connecting to ODrive/ODESC...
+Connected -- firmware v0.0.0
+
+Total writable paths checked: 185
+  OK:      127
+  MISSING: 58
+
+-- MISSING PROPERTIES (will fail on Apply) ---------------------------
+  X  odrv0.task_timers_armed
+     'anonymous_interface' object has no attribute 'task_timers_armed'
+  X  odrv0.config.enable_uart_a
+     'anonymous_interface' object has no attribute 'enable_uart_a'
+  X  odrv0.config.enable_uart_b
+     'anonymous_interface' object has no attribute 'enable_uart_b'
+  X  odrv0.config.enable_uart_c
+     'anonymous_interface' object has no attribute 'enable_uart_c'
+  X  odrv0.config.uart_a_baudrate
+     'anonymous_interface' object has no attribute 'uart_a_baudrate'
+  X  odrv0.config.uart_b_baudrate
+     'anonymous_interface' object has no attribute 'uart_b_baudrate'
+  X  odrv0.config.uart_c_baudrate
+     'anonymous_interface' object has no attribute 'uart_c_baudrate'
+  X  odrv0.config.enable_can_a
+     'anonymous_interface' object has no attribute 'enable_can_a'
+  X  odrv0.config.enable_i2c_a
+     'anonymous_interface' object has no attribute 'enable_i2c_a'
+  X  odrv0.config.usb_cdc_protocol
+     'anonymous_interface' object has no attribute 'usb_cdc_protocol'
+  X  odrv0.config.uart0_protocol
+     'anonymous_interface' object has no attribute 'uart0_protocol'
+  X  odrv0.config.uart1_protocol
+     'anonymous_interface' object has no attribute 'uart1_protocol'
+  X  odrv0.config.uart2_protocol
+     'anonymous_interface' object has no attribute 'uart2_protocol'
+  X  odrv0.config.enable_brake_resistor
+     'anonymous_interface' object has no attribute 'enable_brake_resistor'
+  X  odrv0.config.error_gpio_pin
+     'anonymous_interface' object has no attribute 'error_gpio_pin'
+  X  odrv0.config.gpio1_mode
+     'anonymous_interface' object has no attribute 'gpio1_mode'
+  X  odrv0.config.gpio2_mode
+     'anonymous_interface' object has no attribute 'gpio2_mode'
+  X  odrv0.config.gpio3_mode
+     'anonymous_interface' object has no attribute 'gpio3_mode'
+  X  odrv0.config.gpio4_mode
+     'anonymous_interface' object has no attribute 'gpio4_mode'
+  X  odrv0.config.gpio5_mode
+     'anonymous_interface' object has no attribute 'gpio5_mode'
+  X  odrv0.config.gpio6_mode
+     'anonymous_interface' object has no attribute 'gpio6_mode'
+  X  odrv0.config.gpio7_mode
+     'anonymous_interface' object has no attribute 'gpio7_mode'
+  X  odrv0.config.gpio8_mode
+     'anonymous_interface' object has no attribute 'gpio8_mode'
+  X  odrv0.axis0.config.enable_sensorless_mode
+     'anonymous_interface' object has no attribute 'enable_sensorless_mode'
+  X  odrv0.axis0.config.can.node_id
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.is_extended
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.heartbeat_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.encoder_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.encoder_error_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.controller_error_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.motor_error_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.can.sensorless_error_rate_ms
+     'anonymous_interface' object has no attribute 'can'
+  X  odrv0.axis0.config.mechanical_brake.gpio_num
+     'anonymous_interface' object has no attribute 'mechanical_brake'
+  X  odrv0.axis0.config.mechanical_brake.is_active_low
+     'anonymous_interface' object has no attribute 'mechanical_brake'
+  X  odrv0.axis0.motor.config.bEMF_FF_enable
+     'anonymous_interface' object has no attribute 'bEMF_FF_enable'
+  X  odrv0.axis0.motor.fet_thermistor.config.enabled
+     'anonymous_interface' object has no attribute 'fet_thermistor'
+  X  odrv0.axis0.motor.fet_thermistor.config.temp_limit_lower
+     'anonymous_interface' object has no attribute 'fet_thermistor'
+  X  odrv0.axis0.motor.fet_thermistor.config.temp_limit_upper
+     'anonymous_interface' object has no attribute 'fet_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.enabled
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.gpio_pin
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.temp_limit_lower
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.temp_limit_upper
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.poly_coefficient_0
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.poly_coefficient_1
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.poly_coefficient_2
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.motor.motor_thermistor.config.poly_coefficient_3
+     'anonymous_interface' object has no attribute 'motor_thermistor'
+  X  odrv0.axis0.encoder.config.hall_polarity
+     'anonymous_interface' object has no attribute 'hall_polarity'
+  X  odrv0.axis0.encoder.config.hall_polarity_calibrated
+     'anonymous_interface' object has no attribute 'hall_polarity_calibrated'
+  X  odrv0.axis0.encoder.config.direction
+     'anonymous_interface' object has no attribute 'direction'
+  X  odrv0.axis0.encoder.config.use_index_offset
+     'anonymous_interface' object has no attribute 'use_index_offset'
+  X  odrv0.axis0.encoder.config.index_offset
+     'anonymous_interface' object has no attribute 'index_offset'
+  X  odrv0.axis0.encoder.config.phase_offset
+     'anonymous_interface' object has no attribute 'phase_offset'
+  X  odrv0.axis0.encoder.config.phase_offset_float
+     'anonymous_interface' object has no attribute 'phase_offset_float'
+  X  odrv0.axis0.controller.config.enable_torque_mode_vel_limit
+     'anonymous_interface' object has no attribute 'enable_torque_mode_vel_limit'
+  X  odrv0.axis0.controller.config.spinout_electrical_power_threshold
+     'anonymous_interface' object has no attribute 'spinout_electrical_power_threshold'
+  X  odrv0.axis0.controller.config.spinout_mechanical_power_threshold
+     'anonymous_interface' object has no attribute 'spinout_mechanical_power_threshold'
+  X  odrv0.axis0.controller.autotuning.frequency
+     'anonymous_interface' object has no attribute 'autotuning'
+  X  odrv0.axis0.controller.autotuning.torque_amplitude
+     'anonymous_interface' object has no attribute 'autotuning'
+
+-- OK PROPERTIES -----------------------------------------------------
+  OK odrv0.ibus_report_filter_k
+  OK odrv0.test_property
+  OK odrv0.config.max_regen_current
+  OK odrv0.config.brake_resistance
+  OK odrv0.config.dc_bus_undervoltage_trip_level
+  OK odrv0.config.dc_bus_overvoltage_trip_level
+  OK odrv0.config.enable_dc_bus_overvoltage_ramp
+  OK odrv0.config.dc_bus_overvoltage_ramp_start
+  OK odrv0.config.dc_bus_overvoltage_ramp_end
+  OK odrv0.config.dc_max_positive_current
+  OK odrv0.config.dc_max_negative_current
+  OK odrv0.config.gpio3_analog_mapping
+  OK odrv0.config.gpio4_analog_mapping
+  OK odrv0.can.config.baud_rate
+  OK odrv0.axis0.config.startup_motor_calibration
+  OK odrv0.axis0.config.startup_encoder_index_search
+  OK odrv0.axis0.config.startup_encoder_offset_calibration
+  OK odrv0.axis0.config.startup_closed_loop_control
+  OK odrv0.axis0.config.startup_sensorless_control
+  OK odrv0.axis0.config.startup_homing
+  OK odrv0.axis0.config.enable_step_dir
+  OK odrv0.axis0.config.step_dir_always_on
+  OK odrv0.axis0.config.step_gpio_pin
+  OK odrv0.axis0.config.dir_gpio_pin
+  OK odrv0.axis0.config.enable_watchdog
+  OK odrv0.axis0.config.watchdog_timeout
+  OK odrv0.axis0.config.calibration_lockin.current
+  OK odrv0.axis0.config.calibration_lockin.ramp_time
+  OK odrv0.axis0.config.calibration_lockin.ramp_distance
+  OK odrv0.axis0.config.calibration_lockin.accel
+  OK odrv0.axis0.config.calibration_lockin.vel
+  OK odrv0.axis0.config.sensorless_ramp.current
+  OK odrv0.axis0.config.sensorless_ramp.ramp_time
+  OK odrv0.axis0.config.sensorless_ramp.ramp_distance
+  OK odrv0.axis0.config.sensorless_ramp.accel
+  OK odrv0.axis0.config.sensorless_ramp.vel
+  OK odrv0.axis0.config.sensorless_ramp.finish_distance
+  OK odrv0.axis0.config.sensorless_ramp.finish_on_vel
+  OK odrv0.axis0.config.sensorless_ramp.finish_on_distance
+  OK odrv0.axis0.config.general_lockin.current
+  OK odrv0.axis0.config.general_lockin.ramp_time
+  OK odrv0.axis0.config.general_lockin.ramp_distance
+  OK odrv0.axis0.config.general_lockin.accel
+  OK odrv0.axis0.config.general_lockin.vel
+  OK odrv0.axis0.config.general_lockin.finish_distance
+  OK odrv0.axis0.config.general_lockin.finish_on_vel
+  OK odrv0.axis0.config.general_lockin.finish_on_distance
+  OK odrv0.axis0.motor.config.pre_calibrated
+  OK odrv0.axis0.motor.config.motor_type
+  OK odrv0.axis0.motor.config.pole_pairs
+  OK odrv0.axis0.motor.config.calibration_current
+  OK odrv0.axis0.motor.config.resistance_calib_max_voltage
+  OK odrv0.axis0.motor.config.phase_inductance
+  OK odrv0.axis0.motor.config.phase_resistance
+  OK odrv0.axis0.motor.config.torque_constant
+  OK odrv0.axis0.motor.config.current_lim
+  OK odrv0.axis0.motor.config.current_lim_margin
+  OK odrv0.axis0.motor.config.torque_lim
+  OK odrv0.axis0.motor.config.inverter_temp_limit_lower
+  OK odrv0.axis0.motor.config.inverter_temp_limit_upper
+  OK odrv0.axis0.motor.config.requested_current_range
+  OK odrv0.axis0.motor.config.current_control_bandwidth
+  OK odrv0.axis0.motor.config.acim_autoflux_enable
+  OK odrv0.axis0.motor.config.acim_autoflux_attack_gain
+  OK odrv0.axis0.motor.config.acim_autoflux_decay_gain
+  OK odrv0.axis0.motor.config.acim_gain_min_flux
+  OK odrv0.axis0.motor.config.acim_autoflux_min_Id
+  OK odrv0.axis0.motor.config.direction
+  OK odrv0.axis0.encoder.config.mode
+  OK odrv0.axis0.encoder.config.cpr
+  OK odrv0.axis0.encoder.config.bandwidth
+  OK odrv0.axis0.encoder.config.use_index
+  OK odrv0.axis0.encoder.config.find_idx_on_lockin_only
+  OK odrv0.axis0.encoder.config.abs_spi_cs_gpio_pin
+  OK odrv0.axis0.encoder.config.pre_calibrated
+  OK odrv0.axis0.encoder.config.enable_phase_interpolation
+  OK odrv0.axis0.encoder.config.calib_range
+  OK odrv0.axis0.encoder.config.calib_scan_distance
+  OK odrv0.axis0.encoder.config.calib_scan_omega
+  OK odrv0.axis0.encoder.config.ignore_illegal_hall_state
+  OK odrv0.axis0.encoder.config.sincos_gpio_pin_sin
+  OK odrv0.axis0.encoder.config.sincos_gpio_pin_cos
+  OK odrv0.axis0.sensorless_estimator.config.observer_gain
+  OK odrv0.axis0.sensorless_estimator.config.pll_bandwidth
+  OK odrv0.axis0.sensorless_estimator.config.pm_flux_linkage
+  OK odrv0.axis0.controller.input_pos
+  OK odrv0.axis0.controller.input_vel
+  OK odrv0.axis0.controller.input_torque
+  OK odrv0.axis0.controller.config.control_mode
+  OK odrv0.axis0.controller.config.input_mode
+  OK odrv0.axis0.controller.config.pos_gain
+  OK odrv0.axis0.controller.config.vel_gain
+  OK odrv0.axis0.controller.config.vel_integrator_gain
+  OK odrv0.axis0.controller.config.vel_limit
+  OK odrv0.axis0.controller.config.vel_limit_tolerance
+  OK odrv0.axis0.controller.config.vel_ramp_rate
+  OK odrv0.axis0.controller.config.torque_ramp_rate
+  OK odrv0.axis0.controller.config.circular_setpoints
+  OK odrv0.axis0.controller.config.circular_setpoint_range
+  OK odrv0.axis0.controller.config.homing_speed
+  OK odrv0.axis0.controller.config.inertia
+  OK odrv0.axis0.controller.config.axis_to_mirror
+  OK odrv0.axis0.controller.config.mirror_ratio
+  OK odrv0.axis0.controller.config.load_encoder_axis
+  OK odrv0.axis0.controller.config.input_filter_bandwidth
+  OK odrv0.axis0.controller.config.enable_overspeed_error
+  OK odrv0.axis0.controller.config.enable_gain_scheduling
+  OK odrv0.axis0.controller.config.gain_scheduling_width
+  OK odrv0.axis0.controller.config.enable_vel_limit
+  OK odrv0.axis0.controller.config.anticogging.pre_calibrated
+  OK odrv0.axis0.controller.config.anticogging.anticogging_enabled
+  OK odrv0.axis0.controller.config.anticogging.calib_anticogging
+  OK odrv0.axis0.controller.config.anticogging.calib_pos_threshold
+  OK odrv0.axis0.controller.config.anticogging.calib_vel_threshold
+  OK odrv0.axis0.trap_traj.config.vel_limit
+  OK odrv0.axis0.trap_traj.config.accel_limit
+  OK odrv0.axis0.trap_traj.config.decel_limit
+  OK odrv0.axis0.min_endstop.config.gpio_num
+  OK odrv0.axis0.min_endstop.config.enabled
+  OK odrv0.axis0.min_endstop.config.offset
+  OK odrv0.axis0.min_endstop.config.is_active_high
+  OK odrv0.axis0.min_endstop.config.debounce_ms
+  OK odrv0.axis0.max_endstop.config.gpio_num
+  OK odrv0.axis0.max_endstop.config.enabled
+  OK odrv0.axis0.max_endstop.config.offset
+  OK odrv0.axis0.max_endstop.config.is_active_high
+  OK odrv0.axis0.max_endstop.config.debounce_ms
+
+======================================================================
+Done.

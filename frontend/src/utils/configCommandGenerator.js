@@ -23,10 +23,7 @@ export const generatePowerCommands = (powerConfig = {}) => {
     commands.push(`odrv0.config.dc_bus_undervoltage_trip_level = ${powerConfig.dc_bus_undervoltage_trip_level}`)
   }
 
-  // Enable/disable brake resistor
-  if (powerConfig.enable_brake_resistor !== undefined) {
-    commands.push(`odrv0.config.enable_brake_resistor = ${powerConfig.enable_brake_resistor}`)
-  }
+  // enable_brake_resistor — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   // Brake resistance
   if (powerConfig.brake_resistance !== undefined) {
@@ -42,14 +39,7 @@ export const generatePowerCommands = (powerConfig = {}) => {
     commands.push(`odrv0.config.dc_max_negative_current = ${powerConfig.dc_max_negative_current}`)
   }
 
-  // FET Thermistor configuration
-  if (powerConfig.fet_temp_limit_lower !== undefined) {
-    commands.push(`odrv0.axis0.motor.fet_thermistor.config.temp_limit_lower = ${powerConfig.fet_temp_limit_lower}`)
-  }
-
-  if (powerConfig.fet_temp_limit_upper !== undefined) {
-    commands.push(`odrv0.axis0.motor.fet_thermistor.config.temp_limit_upper = ${powerConfig.fet_temp_limit_upper}`)
-  }
+  // fet_thermistor — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   return commands
 }
@@ -121,39 +111,7 @@ export const generateMotorCommands = (motorConfig = {}) => {
     commands.push(`odrv0.axis${axisNum}.motor.config.pre_calibrated = ${motorConfig.pre_calibrated}`)
   }
 
-  // Motor thermistor configuration
-  if (motorConfig.motor_thermistor_enabled !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.enabled = ${motorConfig.motor_thermistor_enabled ? 'True' : 'False'}`)
-  }
-
-  if (motorConfig.motor_thermistor_gpio_pin !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.gpio_pin = ${motorConfig.motor_thermistor_gpio_pin}`)
-  }
-
-  if (motorConfig.motor_temp_limit_lower !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.temp_limit_lower = ${motorConfig.motor_temp_limit_lower}`)
-  }
-
-  if (motorConfig.motor_temp_limit_upper !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.temp_limit_upper = ${motorConfig.motor_temp_limit_upper}`)
-  }
-
-  // Polynomial coefficients (if needed for custom thermistors)
-  if (motorConfig.motor_thermistor_poly_coeff_0 !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.poly_coefficient_0 = ${motorConfig.motor_thermistor_poly_coeff_0}`)
-  }
-
-  if (motorConfig.motor_thermistor_poly_coeff_1 !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.poly_coefficient_1 = ${motorConfig.motor_thermistor_poly_coeff_1}`)
-  }
-
-  if (motorConfig.motor_thermistor_poly_coeff_2 !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.poly_coefficient_2 = ${motorConfig.motor_thermistor_poly_coeff_2}`)
-  }
-
-  if (motorConfig.motor_thermistor_poly_coeff_3 !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.motor.motor_thermistor.config.poly_coefficient_3 = ${motorConfig.motor_thermistor_poly_coeff_3}`)
-  }
+  // motor_thermistor — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   return commands
 }
@@ -182,10 +140,7 @@ export const generateEncoderCommands = (encoderConfig = {}) => {
     commands.push(`odrv0.axis${axisNum}.encoder.config.use_index = ${encoderConfig.use_index}`)
   }
 
-  // Direction
-  if (encoderConfig.direction !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.encoder.config.direction = ${encoderConfig.direction}`)
-  }
+  // encoder.config.direction — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   // Bandwidth
   if (encoderConfig.bandwidth !== undefined) {
@@ -212,10 +167,7 @@ export const generateEncoderCommands = (encoderConfig = {}) => {
     commands.push(`odrv0.axis${axisNum}.encoder.config.pre_calibrated = ${encoderConfig.pre_calibrated}`)
   }
 
-  // Use index offset
-  if (encoderConfig.use_index_offset !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.encoder.config.use_index_offset = ${encoderConfig.use_index_offset}`)
-  }
+  // encoder.config.use_index_offset — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   // Find index on lockin only
   if (encoderConfig.find_idx_on_lockin_only !== undefined) {
@@ -232,15 +184,7 @@ export const generateEncoderCommands = (encoderConfig = {}) => {
     commands.push(`odrv0.axis${axisNum}.encoder.config.enable_phase_interpolation = ${encoderConfig.enable_phase_interpolation}`)
   }
 
-  // Hall polarity
-  if (encoderConfig.hall_polarity !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.encoder.config.hall_polarity = ${encoderConfig.hall_polarity}`)
-  }
-
-  // Hall polarity calibrated
-  if (encoderConfig.hall_polarity_calibrated !== undefined) {
-    commands.push(`odrv0.axis${axisNum}.encoder.config.hall_polarity_calibrated = ${encoderConfig.hall_polarity_calibrated}`)
-  }
+  // hall_polarity / hall_polarity_calibrated — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   return commands
 }
@@ -334,65 +278,14 @@ export const generateControlCommands = (controlConfig = {}) => {
 export const generateInterfaceCommands = (interfaceConfig = {}) => {
   const commands = []
 
-  // CAN interface
-  if (interfaceConfig.can_node_id !== undefined) {
-    commands.push(`odrv0.axis0.config.can.node_id = ${interfaceConfig.can_node_id}`)
-  }
+  // CAN sub-object path (axis0.config.can.*) — skipped, not present on v0.5.1 boards (ODESC V4.2)
+  // On v0.5.1 the flat path is axis0.config.can_node_id etc.
 
-  if (interfaceConfig.can_node_id_extended !== undefined) {
-    commands.push(`odrv0.axis0.config.can.is_extended = ${interfaceConfig.can_node_id_extended}`)
-  }
+  // enable_uart_a / uart_a_baudrate — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
-  if (interfaceConfig.can_baudrate !== undefined) {
-    commands.push(`odrv0.can.config.baud_rate = ${interfaceConfig.can_baudrate}`)
-  }
+  // uart protocols, enable_uart_b, uart_b_baudrate — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
-  if (interfaceConfig.heartbeat_rate_ms !== undefined) {
-    commands.push(`odrv0.axis0.config.can.heartbeat_rate_ms = ${interfaceConfig.heartbeat_rate_ms}`)
-  }
-
-  // UART A interface
-  if (interfaceConfig.enable_uart_a !== undefined) {
-    commands.push(`odrv0.config.enable_uart_a = ${interfaceConfig.enable_uart_a}`)
-  }
-
-  if (interfaceConfig.uart_a_baudrate !== undefined) {
-    commands.push(`odrv0.config.uart_a_baudrate = ${interfaceConfig.uart_a_baudrate}`)
-  }
-
-  if (interfaceConfig.uart0_protocol !== undefined) {
-    commands.push(`odrv0.config.uart0_protocol = ${interfaceConfig.uart0_protocol}`)
-  }
-
-  // UART B interface
-  if (interfaceConfig.enable_uart_b !== undefined) {
-    commands.push(`odrv0.config.enable_uart_b = ${interfaceConfig.enable_uart_b}`)
-  }
-
-  if (interfaceConfig.uart_b_baudrate !== undefined) {
-    commands.push(`odrv0.config.uart_b_baudrate = ${interfaceConfig.uart_b_baudrate}`)
-  }
-
-  if (interfaceConfig.uart1_protocol !== undefined) {
-    commands.push(`odrv0.config.uart1_protocol = ${interfaceConfig.uart1_protocol}`)
-  }
-
-  // GPIO settings
-  if (interfaceConfig.gpio1_mode !== undefined) {
-    commands.push(`odrv0.config.gpio1_mode = ${interfaceConfig.gpio1_mode}`)
-  }
-
-  if (interfaceConfig.gpio2_mode !== undefined) {
-    commands.push(`odrv0.config.gpio2_mode = ${interfaceConfig.gpio2_mode}`)
-  }
-
-  if (interfaceConfig.gpio3_mode !== undefined) {
-    commands.push(`odrv0.config.gpio3_mode = ${interfaceConfig.gpio3_mode}`)
-  }
-
-  if (interfaceConfig.gpio4_mode !== undefined) {
-    commands.push(`odrv0.config.gpio4_mode = ${interfaceConfig.gpio4_mode}`)
-  }
+  // gpio*_mode — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   // Watchdog timer
   if (interfaceConfig.enable_watchdog !== undefined) {
@@ -422,10 +315,7 @@ export const generateInterfaceCommands = (interfaceConfig = {}) => {
     commands.push(`odrv0.axis0.config.dir_gpio_pin = ${interfaceConfig.dir_gpio_pin}`)
   }
 
-  // Sensorless mode
-  if (interfaceConfig.enable_sensorless !== undefined) {
-    commands.push(`odrv0.axis0.config.enable_sensorless_mode = ${interfaceConfig.enable_sensorless}`)
-  }
+  // enable_sensorless_mode — skipped, not present on v0.5.1 boards (ODESC V4.2)
 
   return commands
 }

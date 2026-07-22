@@ -67,21 +67,21 @@ export const generateAxisTree = (axisNumber) => ({
         dir_gpio_pin: { name: 'Dir GPIO Pin', description: 'GPIO pin for direction input', writable: true, type: 'number', valueType: 'Uint16Property' },
         enable_watchdog: { name: 'Enable Watchdog', description: 'Enable watchdog timer', writable: true, type: 'boolean', valueType: 'BoolProperty' },
         watchdog_timeout: { name: 'Watchdog Timeout', description: 'Watchdog timeout period (s)', writable: true, type: 'number', decimals: 3, valueType: 'Float32Property' },
-        enable_sensorless_mode: { name: 'Enable Sensorless Mode', description: 'Enable sensorless mode', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+        enable_sensorless_mode: { name: 'Enable Sensorless Mode', description: 'Enable sensorless mode (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       },
       children: {
         can: {
           name: 'CAN Configuration',
           description: 'Axis-specific CAN settings',
           properties: {
-            node_id: { name: 'Node ID', description: 'CAN node identifier', writable: true, type: 'number', min: 0, max: 63, valueType: 'Uint32Property' },
-            is_extended: { name: 'Extended ID', description: 'Use 29-bit extended CAN IDs', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-            heartbeat_rate_ms: { name: 'Heartbeat Rate', description: 'CAN heartbeat transmission rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
-            encoder_rate_ms: { name: 'Encoder Rate', description: 'CAN encoder message rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
-            encoder_error_rate_ms: { name: 'Encoder Error Rate', description: 'CAN encoder error message rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
-            controller_error_rate_ms: { name: 'Controller Error Rate', description: 'CAN controller error message rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
-            motor_error_rate_ms: { name: 'Motor Error Rate', description: 'CAN motor error message rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
-            sensorless_error_rate_ms: { name: 'Sensorless Error Rate', description: 'CAN sensorless error message rate (ms)', writable: true, type: 'number', valueType: 'Uint32Property' },
+            node_id: { name: 'Node ID', description: 'CAN node identifier (v0.5.6+ sub-object path)', writable: false, type: 'number', min: 0, max: 63, valueType: 'Uint32Property' },
+            is_extended: { name: 'Extended ID', description: 'Use 29-bit extended CAN IDs (v0.5.6+ sub-object path)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+            heartbeat_rate_ms: { name: 'Heartbeat Rate', description: 'CAN heartbeat transmission rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
+            encoder_rate_ms: { name: 'Encoder Rate', description: 'CAN encoder message rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
+            encoder_error_rate_ms: { name: 'Encoder Error Rate', description: 'CAN encoder error message rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
+            controller_error_rate_ms: { name: 'Controller Error Rate', description: 'CAN controller error message rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
+            motor_error_rate_ms: { name: 'Motor Error Rate', description: 'CAN motor error message rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
+            sensorless_error_rate_ms: { name: 'Sensorless Error Rate', description: 'CAN sensorless error message rate (ms, v0.5.6+ sub-object path)', writable: false, type: 'number', valueType: 'Uint32Property' },
           }
         },
         calibration_lockin: {
@@ -193,7 +193,7 @@ export const generateAxisTree = (axisNumber) => ({
             acim_autoflux_enable: { name: 'ACIM Autoflux Enable', description: 'Enable ACIM autoflux', writable: true, type: 'boolean', valueType: 'BoolProperty' },
             acim_autoflux_attack_gain: { name: 'ACIM Autoflux Attack Gain', description: 'ACIM autoflux attack gain', writable: true, type: 'number', decimals: 6, hasSlider: true, valueType: 'Float32Property' },
             acim_autoflux_decay_gain: { name: 'ACIM Autoflux Decay Gain', description: 'ACIM autoflux decay gain', writable: true, type: 'number', decimals: 6, hasSlider: true, valueType: 'Float32Property' },
-            bEMF_FF_enable: { name: 'bEMF Feed Forward Enable', description: 'Enable back-EMF feed forward', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+            bEMF_FF_enable: { name: 'bEMF Feed Forward Enable', description: 'Enable back-EMF feed forward (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
           }
         },
         fet_thermistor: {
@@ -207,9 +207,9 @@ export const generateAxisTree = (axisNumber) => ({
               name: 'FET Thermistor Configuration',
               description: 'FET thermistor configuration parameters',
               properties: {
-                enabled: { name: 'Enable FET thermistor', description: 'Enable FET thermistor monitoring', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-                temp_limit_lower: { name: 'Lower Temperature Limit', description: 'Lower temperature limit for current limiting (°C)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
-                temp_limit_upper: { name: 'Upper Temperature Limit', description: 'Upper temperature limit for shutdown (°C)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+                enabled: { name: 'Enable FET thermistor', description: 'Enable FET thermistor monitoring (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+                temp_limit_lower: { name: 'Lower Temperature Limit', description: 'Lower temperature limit for current limiting (°C, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+                temp_limit_upper: { name: 'Upper Temperature Limit', description: 'Upper temperature limit for shutdown (°C, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
               }
             }
           }
@@ -225,10 +225,10 @@ export const generateAxisTree = (axisNumber) => ({
               name: 'Motor Thermistor Configuration',
               description: 'Motor thermistor configuration parameters',
               properties: {
-                enabled: { name: 'Enabled', description: 'Enable motor thermistor monitoring', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-                gpio_pin: { name: 'GPIO Pin', description: 'GPIO pin for motor thermistor input', writable: true, type: 'number', valueType: 'Uint16Property' },
-                temp_limit_lower: { name: 'Lower Temperature Limit', description: 'Lower temperature limit for current limiting (°C)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
-                temp_limit_upper: { name: 'Upper Temperature Limit', description: 'Upper temperature limit for shutdown (°C)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+                enabled: { name: 'Enabled', description: 'Enable motor thermistor monitoring (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+                gpio_pin: { name: 'GPIO Pin', description: 'GPIO pin for motor thermistor input (v0.5.6+ only)', writable: false, type: 'number', valueType: 'Uint16Property' },
+                temp_limit_lower: { name: 'Lower Temperature Limit', description: 'Lower temperature limit for current limiting (°C, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+                temp_limit_upper: { name: 'Upper Temperature Limit', description: 'Upper temperature limit for shutdown (°C, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
               }
             }
           }
@@ -295,16 +295,16 @@ export const generateAxisTree = (axisNumber) => ({
             sincos_gpio_pin_cos: { name: 'Sin/Cos GPIO Pin Cos', description: 'GPIO pin for cosine signal', writable: true, type: 'number', valueType: 'Uint16Property' },
             hall_polarity: {
               name: 'Hall Polarity',
-              description: 'Hall sensor polarity',
-              writable: true,
+              description: 'Hall sensor polarity (v0.5.6+ only)',
+              writable: false,
               type: 'number',
               valueType: 'Uint8Property'
             },
-            hall_polarity_calibrated: { name: 'Hall Polarity Calibrated', description: 'Hall sensor polarity calibration status', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+            hall_polarity_calibrated: { name: 'Hall Polarity Calibrated', description: 'Hall sensor polarity calibration status (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
             direction: {
               name: 'Direction',
-              description: 'Encoder direction (1 or -1)',
-              writable: true,
+              description: 'Encoder direction (1 or -1, v0.5.6+ only — use encoder.config.offset on v0.5.1)',
+              writable: false,
               type: 'number',
               valueType: 'Int32Property',
               selectOptions: [
@@ -312,8 +312,8 @@ export const generateAxisTree = (axisNumber) => ({
                 { value: -1, label: 'Reverse (-1)' }
               ]
             },
-            use_index_offset: { name: 'Use Index Offset', description: 'Use encoder index offset', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-            index_offset: { name: 'Index Offset', description: 'Encoder index offset', writable: true, type: 'number', decimals: 6, valueType: 'Float32Property' },
+            use_index_offset: { name: 'Use Index Offset', description: 'Use encoder index offset (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+            index_offset: { name: 'Index Offset', description: 'Encoder index offset (v0.5.6+ only)', writable: false, type: 'number', decimals: 6, valueType: 'Float32Property' },
           }
         }
       }
@@ -415,12 +415,12 @@ export const generateAxisTree = (axisNumber) => ({
             load_encoder_axis: { name: 'Load Encoder Axis', description: 'Axis number for load encoder', writable: true, type: 'number', valueType: 'Uint8Property' },
             input_filter_bandwidth: { name: 'Input Filter Bandwidth', description: 'Input filter bandwidth (Hz)', writable: true, type: 'number', step: 0.1, decimals: 3, hasSlider: true, valueType: 'Float32Property' },
             enable_overspeed_error: { name: 'Enable Overspeed Error', description: 'Enable overspeed error detection', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-            enable_torque_mode_vel_limit: { name: 'Enable Torque Mode Vel Limit', description: 'Enable velocity limit in torque mode', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+            enable_torque_mode_vel_limit: { name: 'Enable Torque Mode Vel Limit', description: 'Enable velocity limit in torque mode (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
             enable_gain_scheduling: { name: 'Enable Gain Scheduling', description: 'Enable controller gain scheduling', writable: true, type: 'boolean', valueType: 'BoolProperty' },
             gain_scheduling_width: { name: 'Gain Scheduling Width', description: 'Width for gain scheduling (counts/s)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
             enable_vel_limit: { name: 'Enable Velocity Limit', description: 'Enable velocity limiting', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-            spinout_electrical_power_threshold: { name: 'Spinout Electrical Power Threshold', description: 'Electrical power threshold for spinout detection (W)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
-            spinout_mechanical_power_threshold: { name: 'Spinout Mechanical Power Threshold', description: 'Mechanical power threshold for spinout detection (W)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+            spinout_electrical_power_threshold: { name: 'Spinout Electrical Power Threshold', description: 'Electrical power threshold for spinout detection (W, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+            spinout_mechanical_power_threshold: { name: 'Spinout Mechanical Power Threshold', description: 'Mechanical power threshold for spinout detection (W, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
           },
           children: {
             anticogging: {
@@ -441,8 +441,8 @@ export const generateAxisTree = (axisNumber) => ({
           name: 'Autotuning',
           description: 'Controller autotuning parameters',
           properties: {
-            frequency: { name: 'Frequency', description: 'Autotuning frequency (Hz)', writable: true, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
-            torque_amplitude: { name: 'Torque Amplitude', description: 'Autotuning torque amplitude (Nm)', writable: true, type: 'number', decimals: 3, hasSlider: true, valueType: 'Float32Property' },
+            frequency: { name: 'Frequency', description: 'Autotuning frequency (Hz, v0.5.6+ only)', writable: false, type: 'number', decimals: 1, hasSlider: true, valueType: 'Float32Property' },
+            torque_amplitude: { name: 'Torque Amplitude', description: 'Autotuning torque amplitude (Nm, v0.5.6+ only)', writable: false, type: 'number', decimals: 3, hasSlider: true, valueType: 'Float32Property' },
           }
         }
       }
@@ -516,8 +516,8 @@ export const generateAxisTree = (axisNumber) => ({
           name: 'Mechanical Brake Configuration',
           description: 'Mechanical brake configuration parameters',
           properties: {
-            gpio_num: { name: 'GPIO Number', description: 'GPIO pin number for brake control', writable: true, type: 'number', valueType: 'Uint16Property' },
-            is_active_low: { name: 'Is Active Low', description: 'Brake control is active low', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+            gpio_num: { name: 'GPIO Number', description: 'GPIO pin number for brake control (v0.5.6+ only)', writable: false, type: 'number', valueType: 'Uint16Property' },
+            is_active_low: { name: 'Is Active Low', description: 'Brake control is active low (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
           }
         }
       }

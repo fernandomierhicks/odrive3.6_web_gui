@@ -22,7 +22,7 @@ export const odrivePropertyTree = {
       brake_resistor_current: { name: 'Brake Resistor Current', description: 'Commanded brake resistor current (A)', writable: false, type: 'number', decimals: 3, valueType: 'Float32Property' },
       n_evt_sampling: { name: 'Sampling Events', description: 'Number of input sampling events since startup', writable: false, type: 'number', valueType: 'Uint32Property' },
       n_evt_control_loop: { name: 'Control Loop Events', description: 'Number of control loop iterations since startup', writable: false, type: 'number', valueType: 'Uint32Property' },
-      task_timers_armed: { name: 'Task Timers Armed', description: 'Set by profiling application to trigger sampling', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+      task_timers_armed: { name: 'Task Timers Armed', description: 'Set by profiling application to trigger sampling (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       user_config_loaded: { name: 'User Config Loaded', description: 'User configuration loaded status', writable: false, type: 'number', valueType: 'Uint32Property' },
       misconfigured: { name: 'Misconfigured', description: 'System misconfiguration flag', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       otp_valid: { name: 'OTP Valid', description: 'One-time programmable memory valid', writable: false, type: 'boolean', valueType: 'BoolProperty' },
@@ -36,13 +36,13 @@ export const odrivePropertyTree = {
     name: 'System Configuration',
     description: 'Top-level ODrive configuration parameters',
     properties: {
-      enable_uart_a: { name: 'Enable UART A', description: 'Enable UART A interface', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-      enable_uart_b: { name: 'Enable UART B', description: 'Enable UART B interface', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-      enable_uart_c: { name: 'Enable UART C', description: 'Enable UART C interface (not supported on ODrive v3.x)', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+      enable_uart_a: { name: 'Enable UART A', description: 'Enable UART A interface (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+      enable_uart_b: { name: 'Enable UART B', description: 'Enable UART B interface (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+      enable_uart_c: { name: 'Enable UART C', description: 'Enable UART C interface (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       uart_a_baudrate: {
         name: 'UART A Baudrate',
-        description: 'UART A communication baudrate',
-        writable: true,
+        description: 'UART A communication baudrate (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Uint32Property',
         selectOptions: [
@@ -58,8 +58,8 @@ export const odrivePropertyTree = {
       },
       uart_b_baudrate: {
         name: 'UART B Baudrate',
-        description: 'UART B communication baudrate',
-        writable: true,
+        description: 'UART B communication baudrate (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Uint32Property',
         selectOptions: [
@@ -75,8 +75,8 @@ export const odrivePropertyTree = {
       },
       uart_c_baudrate: {
         name: 'UART C Baudrate',
-        description: 'UART C communication baudrate (not supported on ODrive v3.x)',
-        writable: true,
+        description: 'UART C communication baudrate (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Uint32Property',
         selectOptions: [
@@ -90,12 +90,12 @@ export const odrivePropertyTree = {
           { value: 921600, label: '921600 bps' }
         ]
       },
-      enable_can_a: { name: 'Enable CAN A', description: 'Enable CAN A interface', writable: true, type: 'boolean', valueType: 'BoolProperty' },
-      enable_i2c_a: { name: 'Enable I2C A', description: 'Enable I2C A interface', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+      enable_can_a: { name: 'Enable CAN A', description: 'Enable CAN A interface (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
+      enable_i2c_a: { name: 'Enable I2C A', description: 'Enable I2C A interface (v0.5.6+ only)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       usb_cdc_protocol: {
         name: 'USB CDC Protocol',
-        description: 'Protocol for USB virtual COM port',
-        writable: true,
+        description: 'Protocol for USB virtual COM port (v0.5.6+ only, skipped on v0.5.1 boards)',
+        writable: false,
         type: 'number',
         valueType: 'Property[ODrive.StreamProtocolType]',
         selectOptions: [
@@ -107,8 +107,8 @@ export const odrivePropertyTree = {
       },
       uart0_protocol: {
         name: 'UART0 Protocol',
-        description: 'UART0 protocol selection',
-        writable: true,
+        description: 'UART0 protocol selection (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Property[ODrive.StreamProtocolType]',
         selectOptions: [
@@ -120,8 +120,8 @@ export const odrivePropertyTree = {
       },
       uart1_protocol: {
         name: 'UART1 Protocol',
-        description: 'UART1 protocol selection',
-        writable: true,
+        description: 'UART1 protocol selection (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Property[ODrive.StreamProtocolType]',
         selectOptions: [
@@ -133,8 +133,8 @@ export const odrivePropertyTree = {
       },
       uart2_protocol: {
         name: 'UART2 Protocol',
-        description: 'UART2 protocol selection',
-        writable: true,
+        description: 'UART2 protocol selection (v0.5.6+ only)',
+        writable: false,
         type: 'number',
         valueType: 'Property[ODrive.StreamProtocolType]',
         selectOptions: [
@@ -146,7 +146,7 @@ export const odrivePropertyTree = {
       },
       max_regen_current: { name: 'Max Regen Current', description: 'Bus current allowed to flow back to power supply before brake resistor starts shunting (A)', writable: true, type: 'number', min: 0, max: 60, step: 0.1, decimals: 1, hasSlider: true, valueType: 'Float32Property' },
       brake_resistance: { name: 'Brake Resistance', description: 'Value of the brake resistor connected to the ODrive (Ω)', writable: true, type: 'number', min: 0.1, max: 100, step: 0.1, decimals: 2, hasSlider: true, valueType: 'Float32Property' },
-      enable_brake_resistor: { name: 'Enable Brake Resistor', description: 'Enable/disable the use of a brake resistor', writable: true, type: 'boolean', valueType: 'BoolProperty' },
+      enable_brake_resistor: { name: 'Enable Brake Resistor', description: 'Enable/disable the use of a brake resistor (v0.5.6+ only, skipped on v0.5.1 boards)', writable: false, type: 'boolean', valueType: 'BoolProperty' },
       dc_bus_undervoltage_trip_level: { name: 'DC Bus Undervoltage Trip', description: 'Minimum voltage below which the motor stops operating (V)', writable: true, type: 'number', min: 8, max: 30, step: 0.1, decimals: 1, hasSlider: true, valueType: 'Float32Property' },
       dc_bus_overvoltage_trip_level: { name: 'DC Bus Overvoltage Trip', description: 'Maximum voltage above which the motor stops operating (V)', writable: true, type: 'number', min: 12, max: 60, step: 0.1, decimals: 1, hasSlider: true, valueType: 'Float32Property' },
       enable_dc_bus_overvoltage_ramp: { name: 'Enable DC Bus Overvoltage Ramp', description: 'Enable DC bus overvoltage ramp feature', writable: true, type: 'boolean', valueType: 'BoolProperty' },
@@ -154,7 +154,7 @@ export const odrivePropertyTree = {
       dc_bus_overvoltage_ramp_end: { name: 'DC Bus Overvoltage Ramp End', description: 'DC bus overvoltage ramp end voltage (V)', writable: true, type: 'number', decimals: 1, valueType: 'Float32Property' },
       dc_max_positive_current: { name: 'DC Max Positive Current', description: 'Max current the power supply can source (A)', writable: true, type: 'number', min: 0, max: 60, step: 0.1, decimals: 1, hasSlider: true, valueType: 'Float32Property' },
       dc_max_negative_current: { name: 'DC Max Negative Current', description: 'Max current the power supply can sink (A)', writable: true, type: 'number', min: -60, max: 0, step: 0.1, decimals: 1, hasSlider: true, valueType: 'Float32Property' },
-      error_gpio_pin: { name: 'Error GPIO Pin', description: 'GPIO pin for error output', writable: true, type: 'number', valueType: 'Uint32Property' },
+      error_gpio_pin: { name: 'Error GPIO Pin', description: 'GPIO pin for error output (v0.5.6+ only)', writable: false, type: 'number', valueType: 'Uint32Property' },
       gpio3_analog_mapping: { name: 'GPIO3 Analog Mapping', description: 'Analog mapping for GPIO3', writable: true, type: 'object', valueType: 'ODrive.Endpoint' },
       gpio4_analog_mapping: { name: 'GPIO4 Analog Mapping', description: 'Analog mapping for GPIO4', writable: true, type: 'object', valueType: 'ODrive.Endpoint' },
     }
@@ -174,8 +174,8 @@ export const odrivePropertyTree = {
         properties: {
           baud_rate: {
             name: 'Baud Rate',
-            description: 'CAN bus communication speed',
-            writable: true,
+            description: 'CAN bus communication speed (v0.5.6+ only)',
+            writable: false,
             type: 'number',
             valueType: 'Uint32Property',
             selectOptions: [
@@ -187,8 +187,8 @@ export const odrivePropertyTree = {
           },
           protocol: {
             name: 'Protocol',
-            description: 'CAN protocol selection',
-            writable: true,
+            description: 'CAN protocol selection (v0.5.6+ only)',
+            writable: false,
             type: 'number',
             valueType: 'Property[ODrive.Can.Protocol]',
             selectOptions: [
